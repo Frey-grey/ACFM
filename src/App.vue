@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useTime } from '@/composables/useTime'
+import { useAudio } from '@/composables/useAudio'
+import { useGameStore } from '@/stores/game'
 
 import Scene from '@/components/Scene.vue'
 import Clock from '@/components/Clock.vue'
@@ -11,6 +13,8 @@ import Welcome from '@/components/Welcome.vue'
 import RealtimeWeather from '@/components/RealtimeWeather.vue'
 
 useTime()
+const { preloadAudio } = useAudio()
+const store = useGameStore()
 
 const showWelcome = ref(false)
 const showSettings = ref(false)
@@ -21,6 +25,10 @@ onMounted(() => {
     showWelcome.value = true
     localStorage.setItem('hasVisited', 'true')
   }
+
+  // 预加载当前时段的音频
+  const hour = new Date().getHours()
+  preloadAudio(hour, store.currentWeather)
 })
 </script>
 

@@ -62,6 +62,38 @@ const getAudioPath = (hour: number, weather: string, isLoop: boolean = false): s
 
 // 全局播放状态
 const isLoaded = ref(false)
+const isPreloaded = ref(false)
+
+// 预加载音频
+const preloadAudio = async (hour: number, weather: string): Promise<void> => {
+  await loadLoopConfig()
+  const mode = getLoopMode(hour, weather)
+
+  // 预加载主音频
+  const mainPath = getAudioPath(hour, weather, false)
+  const mainHowl = new Howl({
+    src: [mainPath],
+    preload: true,
+    html5: true,
+    volume: 0,
+  })
+
+  // 如果是多音频模式，也预加载循环音频
+  if (mode === 'multi') {
+    const loopPath = getAudioPath(hour, weather, true)
+    new Howl({
+      src: [loopPath],
+      preload: true,
+      html5: true,
+      volume: 0,
+    })
+  }
+
+  isPreloaded.value = true
+
+  // 预加载后卸载（保持缓存）
+  mainHowl.unload()
+}
 
 // 停止音频
 const stopAudio = () => {
@@ -185,9 +217,11 @@ export function useAudio() {
 
   return {
     isLoaded,
+    isPreloaded,
     playAudio: _playAudio,
     stopAudio,
     setVolume: _setVolume,
     getCurrentMode,
+    preloadAudio,
   }
 }
