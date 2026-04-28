@@ -39,10 +39,10 @@ export default {
     credit: 'Inspired by Animal Crossing: New Horizons',
   },
   welcome: {
-    title: 'Welcome to AC BGM',
-    description: 'Auto-play background music based on time and weather',
+    title: 'Welcome to AC FM',
+    description: 'Animal Crossing music aired on real time and weather',
     start: 'Start',
-    locationHint: 'Location access needed for weather info',
+    locationHint: 'Get location to match local real-time weather',
     allowLocation: 'Allow Location',
     skipLocation: 'Skip for now',
   },

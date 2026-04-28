@@ -39,10 +39,10 @@ export default {
     credit: '灵感来源于《集合啦！动物森友会》',
   },
   welcome: {
-    title: '欢迎来到动森BGM',
-    description: '根据时间和天气自动播放背景音乐',
+    title: '欢迎来到动森电波',
+    description: '基于现实时间和天气的动森音乐放送',
     start: '开始体验',
-    locationHint: '需要获取您的位置以获取天气信息',
+    locationHint: '获取位置信息以匹配当地实时天气',
     allowLocation: '允许定位',
     skipLocation: '稍后设置',
   },
