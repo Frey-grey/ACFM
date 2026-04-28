@@ -1,0 +1,77 @@
+/* ============================================
+ * Animal Island UI Design Tokens
+ * 动物森友会风格设计系统
+ * ============================================ */
+
+:root {
+  /* 字体 */
+  --animal-font: 'Chiron GoRound TC', -apple-system, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+
+  /* 主色（薄荷青绿）*/
+  --animal-primary: #19c8b9;
+  --animal-primary-hover: #3dd4c6;
+  --animal-primary-active: #11a89b;
+  --animal-primary-bg: #e6f9f6;
+
+  /* 文字（温暖棕色系）*/
+  --animal-text: #794f27;
+  --animal-text-body: #725d42;
+  --animal-text-secondary: #9f927d;
+  --animal-text-muted: #8a7b66;
+  --animal-text-disabled: #c4b89e;
+
+  /* 背景（奶油米白）*/
+  --animal-bg: #f8f8f0;
+  --animal-bg-content: rgb(247, 243, 223);
+  --animal-bg-secondary: #f0e8d8;
+  --animal-bg-disabled: #f0ece2;
+
+  /* 边框 */
+  --animal-border: #c4b89e;
+  --animal-border-light: #d4cfc3;
+  --animal-border-hover: #a89878;
+
+  /* 圆角 */
+  --animal-radius-sm: 12px;
+  --animal-radius: 18px;
+  --animal-radius-lg: 24px;
+  --animal-radius-pill: 50px;
+
+  /* 3D 阴影（核心特征）*/
+  --animal-shadow-btn: #bdaea0;
+  --animal-shadow-input: #d4c9b4;
+  --animal-shadow-switch-on: #5a9e1e;
+
+  /* 卡片阴影 */
+  --animal-shadow-sm: 0 2px 4px 0 rgba(61, 52, 40, 0.06);
+  --animal-shadow-base: 0 3px 10px 0 rgba(61, 52, 40, 0.1);
+  --animal-shadow-lg: 0 8px 24px 0 rgba(61, 52, 40, 0.14);
+  --animal-shadow-card: 0 4px 10px rgba(107, 92, 67, 0.42);
+
+  /* 游戏特殊色 */
+  --animal-focus-yellow: #ffcc00;
+  --animal-focus-yellow-dark: #e0b800;
+  --animal-success: #6fba2c;
+  --animal-success-active: #5a9e1e;
+  --animal-warning: #f5c31c;
+  --animal-error: #e05a5a;
+  --animal-error-active: #c94444;
+
+  /* 动效 */
+  --animal-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --animal-duration-fast: 0.15s;
+  --animal-duration: 0.25s;
+  --animal-duration-slow: 0.35s;
+
+  /* 间距 */
+  --animal-spacing-xs: 4px;
+  --animal-spacing-sm: 8px;
+  --animal-spacing-md: 12px;
+  --animal-spacing-lg: 16px;
+  --animal-spacing-xl: 24px;
+
+  /* 尺寸 */
+  --animal-height-sm: 32px;
+  --animal-height-base: 40px;
+  --animal-height-lg: 48px;
+}
