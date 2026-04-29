@@ -76,7 +76,6 @@ src/
 │   ├── Weather.vue # 天气切换
 │   ├── Player.vue  # 播放控制器
 │   ├── Settings.vue# 设置面板
-│   ├── Welcome.vue # 欢迎弹窗
 │   └── RealtimeWeather.vue # 实时天气开关
 ├── composables/    # 组合式函数
 │   ├── useTime.ts  # 时间处理

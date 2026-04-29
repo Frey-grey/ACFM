@@ -38,12 +38,4 @@ export default {
     description: '动森电波\n基于现实时间和天气的动森音乐放送',
     credit: '灵感来源于《集合啦！动物森友会》',
   },
-  welcome: {
-    title: '欢迎来到动森电波',
-    description: '基于现实时间和天气的动森音乐放送',
-    start: '开始体验',
-    locationHint: '获取位置信息以匹配当地实时天气',
-    allowLocation: '允许定位',
-    skipLocation: '稍后设置',
-  },
 }

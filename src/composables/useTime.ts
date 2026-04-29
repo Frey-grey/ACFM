@@ -1,8 +1,10 @@
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, watch } from 'vue'
 import { useGameStore } from '@/stores/game'
+import { useAudio } from '@/composables/useAudio'
 
 export function useTime() {
   const store = useGameStore()
+  const { handleHourTransition } = useAudio()
   let intervalId: ReturnType<typeof setInterval> | null = null
 
   const updateHour = () => {
@@ -30,6 +32,16 @@ export function useTime() {
       intervalId = null
     }
   }
+
+  // 监听时间变化，触发音乐过渡
+  watch(
+    () => store.currentHour,
+    (newHour, oldHour) => {
+      if (oldHour !== undefined && newHour !== oldHour && store.isPlaying) {
+        handleHourTransition(newHour, store.effectiveWeather)
+      }
+    }
+  )
 
   onMounted(() => {
     startWatching()

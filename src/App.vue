@@ -9,23 +9,15 @@ import Clock from '@/components/Clock.vue'
 import Weather from '@/components/Weather.vue'
 import Player from '@/components/Player.vue'
 import Settings from '@/components/Settings.vue'
-import Welcome from '@/components/Welcome.vue'
 import RealtimeWeather from '@/components/RealtimeWeather.vue'
 
 useTime()
 const { preloadAudio } = useAudio()
 const store = useGameStore()
 
-const showWelcome = ref(false)
 const showSettings = ref(false)
 
 onMounted(() => {
-  const hasVisited = localStorage.getItem('hasVisited')
-  if (!hasVisited) {
-    showWelcome.value = true
-    localStorage.setItem('hasVisited', 'true')
-  }
-
   // 预加载当前时段的音频
   const hour = new Date().getHours()
   preloadAudio(hour, store.currentWeather)
@@ -61,7 +53,6 @@ onMounted(() => {
       </main>
     </div>
 
-    <Welcome v-if="showWelcome" @close="showWelcome = false" />
     <Settings v-if="showSettings" @close="showSettings = false" />
   </div>
 </template>
