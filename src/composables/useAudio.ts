@@ -20,7 +20,6 @@ let isLooping = false
 let currentHour: number = 0
 let currentWeather: string = ''
 let isTransitioning = false
-let pendingHourChange: number | null = null
 
 // 加载循环配置
 const loadLoopConfig = async (): Promise<LoopConfig> => {
@@ -139,7 +138,6 @@ const stopAudio = () => {
   isFirstPlay = true
   isLooping = false
   isTransitioning = false
-  pendingHourChange = null
 }
 
 // 淡出音频（4秒）
@@ -173,7 +171,6 @@ const handleHourTransition = async (newHour: number, weather: string) => {
   }
 
   isTransitioning = true
-  pendingHourChange = newHour
 
   // 淡出当前音频（4秒）
   await fadeOutAudio(4000)
@@ -183,7 +180,6 @@ const handleHourTransition = async (newHour: number, weather: string) => {
 
   // 播放新时段音频
   isTransitioning = false
-  pendingHourChange = null
   currentHour = newHour
   currentWeather = weather
 
